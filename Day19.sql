@@ -117,3 +117,8 @@ update dbo.SALES_DATASET_RFM_PRJ
 set quantityordered = (select avg(quantityordered)
 from dbo.SALES_DATASET_RFM_PRJ)
 where quantityordered in (select quantityordered from outlier)
+
+--SAVE INTO NEW TABLE--
+select *
+into SALES_DATASET_RFM_PRJ_CLEAN
+FROM dbo.SALES_DATASET_RFM_PRJ
